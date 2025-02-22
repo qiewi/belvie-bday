@@ -135,3 +135,34 @@ body {
     font-family: Arial, sans-serif;
     color: #24272e;
 }
+
+/* Mobile message styles */
+#mobile-message {
+    display: none; /* Hide by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Poppins", sans-serif;
+    font-size: 24px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+  
+  /* Show the mobile message only on screens with a max width of 768px (typical mobile devices) */
+  @media screen and (max-width: 768px) {
+    #mobile-message {
+      display: block; /* Show the message */
+    }
+  
+    /* Hide other content on mobile */
+    .piano-container,
+    .button-container,
+    #sequence-display {
+      display: none;
+    }
+  }
