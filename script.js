@@ -1,20 +1,49 @@
 let pianoContainer = document.getElementsByClassName("piano-container");
 const base = "./audio/";
 let sequence = []; // Array to store the sequence of clicked keys
-const targetSequence = [5, 3, 2, 1, 2, 3, 1]; // The target sequence to match
+const targetSequence = [2, 5, 5, 4, 4, 15, 2, 2, 5, 18, 18, 18, 5, 5, 4, 15, 18, 18, 18, 18, 5, 5, 4, 15, 14, 14, 14, 14, 2, 15]; // The target sequence to match
 const sequenceDisplay = document.getElementById("sequence-display"); // Get the sequence display element
 const sequenceValues = document.getElementById("sequence-values"); // Get the element to display sequence values
 
+// Mapping of key indices to note names
+const noteMapping = {
+  1: "C#4",
+  2: "D#4",
+  3: "F#4",
+  4: "G#4",
+  5: "A#4",
+  6: "C#5",
+  7: "D#5",
+  8: "F#5",
+  9: "G#5",
+  10: "A#5",
+  11: "C4",
+  12: "D4",
+  13: "E4",
+  14: "F4",
+  15: "G4",
+  16: "A4",
+  17: "B4",
+  18: "C5",
+  19: "D5",
+  20: "E5",
+  21: "F5",
+  22: "G5",
+  23: "A5",
+  24: "B5",
+};
+
 // Function to update the sequence display
 function updateSequenceDisplay() {
-  sequenceValues.textContent = sequence.join(" - "); // Update the sequence values
+  // Map the sequence indices to note names
+  const noteSequence = sequence.map((keyIndex) => noteMapping[keyIndex]);
+  sequenceValues.textContent = noteSequence.join(" - "); // Update the sequence values
 }
 
 // Reset button functionality
 document.getElementById("reset-button").addEventListener("click", () => {
   sequence = []; // Reset the sequence
   updateSequenceDisplay(); // Update the display
-  alert("Sequence reset. Try again.");
 });
 
 window.onload = () => {

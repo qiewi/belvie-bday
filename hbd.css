@@ -5,7 +5,7 @@
     font-family: "Poppins", sans-serif;
   }
   body {
-    background-color: #fff;
+    background-image: url('assets/bg.png');
   }
   .card {
     width: 640px;
@@ -77,7 +77,7 @@
   }
   .front {
     background-color: #000000;
-    border: #da2497 5px solid;
+    border: #fcbf29 5px solid;
   }
   .back {
     transform: rotateY(180deg);
