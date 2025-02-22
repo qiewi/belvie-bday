@@ -77,11 +77,11 @@
   }
   .front {
     background-color: #000000;
-    border: #000000 5px solid;
+    border: #da2497 5px solid;
   }
   .back {
     transform: rotateY(180deg);
-    border: #000000 5px solid;
+    border: #000 5px solid;
   }
   .cake {
     width: 100%;
