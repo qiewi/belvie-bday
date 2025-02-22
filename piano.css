@@ -95,13 +95,26 @@ body {
     justify-content: center;
     margin-top: 40px;
 }
+
 #reset-button {
+    background-color: gold;
     display: flex;
     position: absolute;
     left: 50%;
     bottom: 20%;
     transform: translateX(-50%);
-    background-color: gold;
+}
+
+#skip-button {
+    background-color: rgb(251, 192, 16);
+    display: flex;
+    position: absolute;
+    left: 50%;
+    bottom: 12%;
+    transform: translateX(-50%);
+}
+
+.btn {
     border: 3px solid black;
     margin-top: 20px;
     padding: 10px 20px;
@@ -111,7 +124,7 @@ body {
     cursor: pointer;
 }
 
-#reset-button:hover {
+.btn:hover {
     box-shadow: none;
 }
 

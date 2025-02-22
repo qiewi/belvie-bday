@@ -4,6 +4,7 @@ let sequence = []; // Array to store the sequence of clicked keys
 const targetSequence = [2, 5, 5, 4, 4, 15, 2, 2, 5, 18, 18, 18, 5, 5, 4, 15, 18, 18, 18, 18, 5, 5, 4, 15, 14, 14, 14, 14, 2, 15]; // The target sequence to match
 const sequenceDisplay = document.getElementById("sequence-display"); // Get the sequence display element
 const sequenceValues = document.getElementById("sequence-values"); // Get the element to display sequence values
+const skipButton = document.getElementById("skip-button"); // Get the Skip button
 
 // Mapping of key indices to note names
 const noteMapping = {
@@ -33,6 +34,11 @@ const noteMapping = {
   24: "B5",
 };
 
+// Check if the sequence has been completed before
+if (localStorage.getItem("sequenceCompleted") === "true") {
+  skipButton.style.display = "inline-block"; // Show the Skip button
+}
+
 // Function to update the sequence display
 function updateSequenceDisplay() {
   // Map the sequence indices to note names
@@ -44,6 +50,11 @@ function updateSequenceDisplay() {
 document.getElementById("reset-button").addEventListener("click", () => {
   sequence = []; // Reset the sequence
   updateSequenceDisplay(); // Update the display
+});
+
+// Skip button functionality
+skipButton.addEventListener("click", () => {
+  window.location.href = "hbd.html"; // Redirect to hbd.html
 });
 
 window.onload = () => {
@@ -64,7 +75,8 @@ window.onload = () => {
       // Check if the sequence matches the target sequence
       if (sequence.length === targetSequence.length) {
         if (arraysMatch(sequence, targetSequence)) {
-          window.location.href = "hbd.html";
+          localStorage.setItem("sequenceCompleted", "true"); // Store completion status
+          window.location.href = "hbd.html"; // Redirect to hbd.html
         } else {
           sequence = []; // Reset the sequence
           updateSequenceDisplay(); // Update the display
