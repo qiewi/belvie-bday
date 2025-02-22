@@ -9,7 +9,7 @@
   }
   .card {
     width: 640px;
-    height: 400px;
+    height: 440px;
     position: absolute;
     margin: auto;
     left: 0;
@@ -21,10 +21,10 @@
     transition: 1s;
   }
   .card:hover {
-    transform: rotate(-5deg);
+    transform: rotate(5deg);
   }
   .card:hover .outside {
-    transform: rotateY(-130deg);
+    transform: rotateY(-170deg);
   }
   .outside,
   .inside {
@@ -34,15 +34,29 @@
     left: 50.1%;
   }
   .inside {
-    background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+    background: #000;
     border: #000000 5px solid;
     padding: 0 20px;
-    text-align: center;
+    text-align: left;
+    color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     left: 50%;
+  }
+  .back {
+    background: #000;
+    color: #fff;
+    padding: 0 20px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .back p, .inside p {
+    font-size: small;
   }
   .outside {
     -webkit-transform-style: preserve-3d;
@@ -62,12 +76,11 @@
     transform: rotateX(0deg);
   }
   .front {
-    background-color: #ffffff;
+    background-color: #000000;
     border: #000000 5px solid;
   }
   .back {
     transform: rotateY(180deg);
-    background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
     border: #000000 5px solid;
   }
   .cake {
@@ -89,7 +102,7 @@
         #fedbab 60px,
         transparent 60px
       ),
-      radial-gradient(circle at 30px 5px, #994c10 30px, #fcbf29 31px);
+      radial-gradient(circle at 30px 5px, #da2497 30px, #fcbf29 31px);
     border-radius: 10px 10px 0 0;
     position: relative;
     margin: auto;
@@ -164,13 +177,13 @@
       transform: scale(1) rotate(45deg);
     }
   }
-  .outside p {
-    font-weight: bold;
+  .outside h1 {
+    font-weight:bolder;
     font-size: 23px;
     text-transform: uppercase;
     margin-top: 30px;
     text-align: center;
-    color: #000046;
+    color: #fff;
   }
   .inside h1 {
     font-size: 120px;
